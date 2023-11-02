@@ -1,9 +1,14 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './styles/App.css';
 
 function App() {
   return (
-    <div></div>
+    <BrowserRouter>
+      <Routes>
+        <Route></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
