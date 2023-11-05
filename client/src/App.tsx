@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
+import SignupPage from './pages/SignupPage';
 import OverlayComponent from './components/OverlayComponent';
 import './styles/App.css';
 
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>
       <OverlayComponent isOpen={overlayIsOpen}/>
       <Routes>
+        <Route path="/signup" element={<SignupPage/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/" element={<HomePage/>}></Route>
       </Routes>
