@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import SignupPage from './pages/SignupPage';
 import LandingPage from './pages/LandingPage';
 import OverlayComponent from './components/OverlayComponent';
+import NavComponent from "./components/NavComponent";
 import './styles/App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <NavComponent/>
       <OverlayComponent isOpen={overlayIsOpen}/>
       <Routes>
         <Route path="/:username" element={<LandingPage/>}></Route>
