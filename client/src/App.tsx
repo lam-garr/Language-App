@@ -7,6 +7,7 @@ import LandingPage from './pages/LandingPage';
 import OverlayComponent from './components/OverlayComponent';
 import NavComponent from "./components/NavComponent";
 import CoursesPage from "./pages/CoursesPage";
+import LessonsPage from "./pages/LessonsPage";
 import './styles/App.css';
 
 function App() {
