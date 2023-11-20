@@ -19,7 +19,15 @@ function TermsConditionsComponent(prop: termsConditionsInterface) {
     })
     
     return(
-        <aside ref={modalRef}></aside>
+        <aside className={`terms-modal ${prop.modalIsOpen?"active":""}`} ref={modalRef}>
+            <div className="terms-modal-header">
+                <h1 className="terms-modal-title">Terms and Conditions</h1>
+                <button className="terms-modal-clse-btn" onClick={prop.modalHandler}>&times;</button>
+            </div>
+            <div className="terms-modal-body">
+                terms and conditions...
+            </div>
+        </aside>
     );
 }
 
