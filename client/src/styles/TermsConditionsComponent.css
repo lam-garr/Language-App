@@ -1,0 +1,45 @@
+.terms-modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 1px solid rgb(82, 29, 112);
+    border-radius: 10px;
+    background-color: white;
+    width: 450px;
+    margin: 0;
+    z-index: 100;
+}
+
+.terms-modal.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.terms-modal-header{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(252, 244, 235);
+}
+
+.terms-modal-header .terms-modal-title{
+    font-size: large;
+    font-weight: bold;
+}
+
+.terms-modal-header .terms-clse-btn{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-weight: large;
+    font-weight: bold;
+}
+
+.terms-modal-body{
+    height: 150px;
+    padding: 10px 10px;
+    margin: 0;
+    text-align: center;
+}
