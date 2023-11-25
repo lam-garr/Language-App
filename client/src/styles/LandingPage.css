@@ -5,7 +5,6 @@
 .landing-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
     background-color: white;
 }
 
@@ -16,7 +15,6 @@
     width: 400px;
     background-color: none;
     padding: 10px;
-    margin-left: 20px;
     margin-bottom: 10px;
 }
 
@@ -32,13 +30,27 @@
     padding: 10px;
     justify-content: center;
     padding-top: 25px;
+    flex-direction: column;
+}
+
+.landing-section-one-title {
+    display: flex;
+    flex-direction: row;
+    color: rgb(110, 8, 110);
+    justify-content: space-between;
+    width: 100px;
+    height: 30px;
+}
+
+.landing-section-one-title h2 {
+    font-size: 20px;
 }
 
 .landing-section-one-parent-container {
     display: flex;
     flex-direction: row;
-    width: inherit;
-    height: inherit;
+    width: 1300px;
+    height: 250px;
     justify-content: space-evenly;
 }
 
@@ -52,6 +64,31 @@
     border-radius: 15px;
     height: 190px;
     padding: 5px;
+    justify-content: space-between;
+}
+
+.landing-sec-one-cOne-text {
+    padding: 10px;
+}
+
+.landing-sec-one-cOne-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.landing-sec-one-cOne-button button {
+    font-size: 15px;
+    padding: 5px 0px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    background-color: pink;
+    color: white;
 }
 
 .landing-sec-one-container-two {
@@ -64,33 +101,71 @@
     border-radius: 15px;
     height: 190px;
     padding: 5px;
+    justify-content: space-between;
+}
+
+.landing-sec-one-cTwo-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.landing-sec-one-cTwo-button button {
+    font-size: 15px;
+    padding: 5px 0px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    background-color: pink;
+    color: white;
 }
 
 .landing-section-two {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 250px;
     width: 1354px;
     background-color: white;
     padding: 10px;
     align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .landing-sec-two-container-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     height: 190px;
     width: 700px;
     background-color: rgb(250, 223, 227);
     border-radius: 15px;
-    margin-right: 5px;
     padding: 5px;
+    color: white;
+}
+
+.landing-sec-two-container-one button {
+    font-size: 20px;
+    padding: 5px 0px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 250px;
+    height: 40px;
+    cursor: pointer;
+    background-color: rgb(235, 152, 166);
+    color: white;
 }
 
 .landing-section-three {
     display: flex;
     flex-direction: column;
     height: 500px;
-    width: 100%;
+    width: 1354px;
     background-color: white;
     padding: 10px;
     justify-content: center;
@@ -104,7 +179,6 @@
     justify-content: space-between;
     width: 1300px;
     height: 50px;
-    margin-left: 10px;
 }
 
 .landing-section-three-parent-container {

@@ -11,18 +11,36 @@ function LandingPage() {
                 </div>
             </header>
             <section className="landing-section-one">
+                <div className="landing-section-one-title">
+                    <h2>Up Next</h2>
+                    <div></div>
+                    <div></div>
+                </div>
                 <div className="landing-section-one-parent-container">
                     <div className="landing-sec-one-container-one">
-                        review lessons
+                        <div className="landing-sec-one-cOne-text">
+                            <span>Review your past lessons.</span>
+                        </div>
+                        <div className="landing-sec-one-cOne-button">
+                            <div></div>
+                            <button>Review</button>
+                        </div>
                     </div>
                     <div className="landing-sec-one-container-two">
-                        continue to next lessons
+                        <div className="landing-sec-one-cTwo-text">
+                            <span>Continue to the next lesson.</span>
+                        </div>
+                        <div className="landing-sec-one-cTwo-button">
+                            <div></div>
+                            <button>Continue</button>
+                        </div>
                     </div>
                 </div>
             </section>
             <section className="landing-section-two">
                 <div className="landing-sec-two-container-one">
-                    try new courses!
+                    Read a new language like a native!
+                    <button>Try New Courses!</button>
                 </div>
             </section>
             <section className="landing-section-three">
