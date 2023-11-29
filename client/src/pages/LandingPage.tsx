@@ -51,10 +51,24 @@ function LandingPage() {
                 </div>
                 <div className="landing-section-three-parent-container">
                     <div className="landing-sec-three-container-one">
-                        my activity
+                        <div className="landing-sec-three-cOne-title">
+                            <h2>My Activity</h2>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="landing-sec-three-cOne-content">
+                            <div></div>
+                        </div>
                     </div>
                     <div className="landing-sec-three-container-two">
-                        acheivemnets
+                        <div className="landing-sec-three-cTwo-title">
+                            <h2>Acheivements</h2>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div className="landing-sec-three-cTwo-content">
+                            <div></div>
+                        </div>
                     </div>
                 </div>
             </section>
