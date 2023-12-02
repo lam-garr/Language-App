@@ -19,6 +19,23 @@ function NavComponent() {
                     account
                 </div>
             </div>
+            <div className="nav-container-mobile">
+                <div className="nav-mobile-left">
+                    <div>
+                        left content
+                    </div>
+                </div>
+                <div className="nav-mobile-middle">
+                    <div>
+                        middle content
+                    </div>
+                </div>
+                <div className="nav-mobile-right">
+                    <div>
+                        right content
+                    </div>
+                </div>
+            </div>
         </nav>
     );
 }
