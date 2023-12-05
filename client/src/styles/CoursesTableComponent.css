@@ -1,0 +1,27 @@
+.course-tbl {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.course-tbl td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.course-tbl th {
+    padding: 8px;
+}
+
+.course-tbl th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(142, 54, 168);
+    color: white;
+}
+
+.course-tbl-view-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
