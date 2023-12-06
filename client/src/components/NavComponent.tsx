@@ -21,9 +21,11 @@ function NavComponent() {
             </div>
             <div className="nav-container-mobile">
                 <div className="nav-mobile-left">
-                    <div>
-                        left content
-                    </div>
+                    <button className="nav-mobile-menu-btn">
+                        <div className="nav-mobile-menu-div"></div>
+                        <div className="nav-mobile-menu-div"></div>
+                        <div className="nav-mobile-menu-div"></div>
+                    </button>
                 </div>
                 <div className="nav-mobile-middle">
                     <div>

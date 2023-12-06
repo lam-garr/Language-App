@@ -65,3 +65,44 @@
     background-color: rgb(59, 5, 80);
     display: none;
 }
+
+.nav-mobile-left {
+    display: flex;
+    width: 100px;
+}
+
+.nav-mobile-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.nav-mobile-menu-div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    margin-left: 3px;
+}
+
+.nav-mobile-middle {
+    display: flex;
+    width: 100px;
+}
+
+.nav-mobile-right {
+    display: flex;
+    width: 100px;
+}
+
+@media(max-width: 768px) {
+    .nav-container-mobile {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-container{
+        display: none;
+    }
+}
