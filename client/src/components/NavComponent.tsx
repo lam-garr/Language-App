@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/NavComponent.css";
 
 function NavComponent() {
@@ -10,13 +11,13 @@ function NavComponent() {
                         <h1>Logo</h1>
                     </div>
                     <div className="nav-left-content">
-                        <h2>home</h2>
-                        <h2>my level</h2>
-                        <h2>my courses</h2>
+                        <Link to={"/"}><button><h2>home</h2></button></Link>
+                        <Link to={"/"}><button><h2>my level</h2></button></Link>
+                        <Link to={"/"}><button><h2>my courses</h2></button></Link>
                     </div>
                 </div>
                 <div className="nav-right">
-                    account
+                    <Link to={"/"}><button><h2>account</h2></button></Link>
                 </div>
             </div>
             <div className="nav-container-mobile">
@@ -29,12 +30,12 @@ function NavComponent() {
                 </div>
                 <div className="nav-mobile-middle">
                     <div>
-                        middle content
+                        <Link to={"/"}><button><h1>Logo</h1></button></Link>
                     </div>
                 </div>
                 <div className="nav-mobile-right">
                     <div>
-                        right content
+                        <Link to={"/"}><button><h2>account</h2></button></Link>
                     </div>
                 </div>
             </div>

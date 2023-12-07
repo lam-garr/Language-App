@@ -1,16 +1,17 @@
 .nav-content{
     z-index: 50;
-    height: 60px;
-    max-height: 150px;
+    height: 150px;
     position: sticky;
     top: 0;
     width: 100%;
+    max-height: 70px;
 }
 
 .nav-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
     background-color: rgb(59, 5, 80);
 }
 
@@ -41,9 +42,19 @@
     padding: 5px;
 }
 
+.nav-left-content button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .nav-left-content h2 {
     color: rgb(244, 226, 248);
     font-size: 15px;
+}
+
+.nav-left-content h2:hover {
+    color: rgb(223, 207, 226);
 }
 
 .nav-right {
@@ -51,12 +62,22 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
-.nav-right {
-    padding: 5px;
+.nav-right h2 {
     color: rgb(244, 226, 248);
     font-size: 20px; 
+}
+
+.nav-right button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-right h2:hover {
+    color: rgb(223, 207, 226);
 }
 
 .nav-container-mobile {
@@ -64,6 +85,7 @@
     align-items: center;
     background-color: rgb(59, 5, 80);
     display: none;
+    height: 70px;
 }
 
 .nav-mobile-left {
@@ -81,7 +103,7 @@
 .nav-mobile-menu-div {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: rgb(244, 226, 248);
     margin: 6px 0;
     margin-left: 3px;
 }
@@ -89,11 +111,35 @@
 .nav-mobile-middle {
     display: flex;
     width: 100px;
+    font-size: 15px;
+    color: rgb(244, 226, 248);
+}
+
+.nav-mobile-middle button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-mobile-middle h2:hover {
+    color: rgb(223, 207, 226);
 }
 
 .nav-mobile-right {
     display: flex;
     width: 100px;
+    font-size: 15px;
+    color: rgb(244, 226, 248);
+}
+
+.nav-mobile-right button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-mobile-right h2:hover {
+    color: rgb(223, 207, 226);
 }
 
 @media(max-width: 768px) {
