@@ -12,15 +12,24 @@ import './styles/App.css';
 
 function App() {
 
+  //handle overlay change
   const [ overlayIsOpen, setOverlayIsOpen ] = useState(false);
 
   const changeOverlay = () => {
     setOverlayIsOpen(!overlayIsOpen);
   }
 
+  //handle sidebar change
+  const [ sidebarIsOpen, setSidebarIsOpen ] = useState(false);
+
+  const handleSidebarChange = () => {
+    setSidebarIsOpen(true);
+    setOverlayIsOpen(!overlayIsOpen);
+  }
+
   return (
     <BrowserRouter>
-      <NavComponent/>
+      <NavComponent sidebarHandler={handleSidebarChange}/>
       <OverlayComponent isOpen={overlayIsOpen}/>
       <Routes>
         <Route path="/:username" element={<LandingPage/>}></Route>

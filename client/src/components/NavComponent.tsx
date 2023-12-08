@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import navComponentPropInterface from "../utils/interfaces/navComponentPropInterface";
 import "../styles/NavComponent.css";
 
-function NavComponent() {
+function NavComponent(prop: navComponentPropInterface) {
     return(
         <nav className="nav-content">
             <div className="nav-container">
@@ -22,7 +23,7 @@ function NavComponent() {
             </div>
             <div className="nav-container-mobile">
                 <div className="nav-mobile-left">
-                    <button className="nav-mobile-menu-btn">
+                    <button className="nav-mobile-menu-btn" onClick={prop.sidebarHandler}>
                         <div className="nav-mobile-menu-div"></div>
                         <div className="nav-mobile-menu-div"></div>
                         <div className="nav-mobile-menu-div"></div>
