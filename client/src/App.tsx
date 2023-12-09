@@ -8,6 +8,7 @@ import OverlayComponent from './components/OverlayComponent';
 import NavComponent from "./components/NavComponent";
 import CoursesPage from "./pages/CoursesPage";
 import LessonsPage from "./pages/LessonsPage";
+import SidebarComponent from "./components/SidebarComponent";
 import './styles/App.css';
 
 function App() {
