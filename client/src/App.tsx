@@ -8,6 +8,7 @@ import OverlayComponent from './components/OverlayComponent';
 import NavComponent from "./components/NavComponent";
 import CoursesPage from "./pages/CoursesPage";
 import LessonsPage from "./pages/LessonsPage";
+import LearningPage from "./pages/LearningPage";
 import SidebarComponent from "./components/SidebarComponent";
 import './styles/App.css';
 
@@ -35,6 +36,7 @@ function App() {
       <OverlayComponent isOpen={overlayIsOpen}/>
       <Routes>
         <Route path="/:username" element={<LandingPage/>}></Route>
+        <Route path="/learn" element={<LearningPage/>}></Route>
         <Route path="/signup" element={<SignupPage/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/" element={<HomePage/>}></Route>
