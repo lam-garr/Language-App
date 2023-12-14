@@ -12,3 +12,9 @@
 .overlay.active {
     display: block;
 }
+
+@media(min-width: 768px) {
+    .overlay.active {
+        display: none;
+    }
+}

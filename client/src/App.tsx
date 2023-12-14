@@ -24,13 +24,14 @@ function App() {
   const [ sidebarIsOpen, setSidebarIsOpen ] = useState(false);
 
   const handleSidebarChange = () => {
-    setSidebarIsOpen(true);
+    setSidebarIsOpen(!sidebarIsOpen);
     setOverlayIsOpen(!overlayIsOpen);
   }
 
   return (
     <BrowserRouter>
       <NavComponent sidebarHandler={handleSidebarChange}/>
+      <SidebarComponent clickHandler={handleSidebarChange} closeHandler={handleSidebarChange} sidebarIsOpen={sidebarIsOpen}/>
       <OverlayComponent isOpen={overlayIsOpen}/>
       <Routes>
         <Route path="/:username" element={<LandingPage/>}></Route>
