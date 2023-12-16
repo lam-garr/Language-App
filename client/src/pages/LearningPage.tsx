@@ -7,8 +7,8 @@ function LearningPage() {
             <div className="learning-content">
                 <section className="learning-sec-one">
                     <div className="learning-sec-one-title">
-                        <span className="learning-sOne-title-id">0.0</span>
-                        <span className="learning-sOne-title-name">title</span>
+                        <span className="learning-sOne-title-id"><h1>0.0</h1></span>
+                        <span className="learning-sOne-title-name"><h1>title</h1></span>
                     </div>
                 </section>
                 <section className="learning-sec-two">
