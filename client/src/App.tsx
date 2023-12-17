@@ -36,6 +36,7 @@ function App() {
       <OverlayComponent isOpen={overlayIsOpen}/>
       <Routes>
         <Route path="/:username" element={<LandingPage/>}></Route>
+        <Route path="/lessons" element={<LessonsPage/>}></Route>
         <Route path="/learn" element={<LearningPage/>}></Route>
         <Route path="/signup" element={<SignupPage/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
