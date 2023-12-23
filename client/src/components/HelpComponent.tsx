@@ -20,6 +20,18 @@ function HelpComponent(prop: helpComponentPropInterface) {
         }
     })
 
+    const getMessage = () => {
+        if(prop.helpMessageId === 1) {
+            return "";
+        }
+
+        if(prop.helpMessageId === 2) {
+            return "";
+        }
+
+        return "";
+    }
+
     return(
         <aside className={`help-component ${prop.helpComponentIsOpen?"active":""}`} ref={modalRef}>
             <div className="help-component-header">
@@ -28,7 +40,7 @@ function HelpComponent(prop: helpComponentPropInterface) {
                 <button className="help-component-close-btn" onClick={prop.helpComponentHandler}>&times;</button>
             </div>
             <div className="help-component-body">
-                {prop.helpMessage}
+                <span>{getMessage()}</span>
             </div>
         </aside>
     );

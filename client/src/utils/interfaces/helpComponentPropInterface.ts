@@ -4,5 +4,5 @@ export default interface helpComponentPropInterface {
     helpComponentHandler: (event: React.MouseEvent<HTMLButtonElement>) => void,
     helpComponentIsOpen: boolean,
     closeHelpComponent: () => void,
-    helpMessage: string;
+    helpMessageId: number;
 }
