@@ -9,6 +9,7 @@ import NavComponent from "./components/NavComponent";
 import CoursesPage from "./pages/CoursesPage";
 import LessonsPage from "./pages/LessonsPage";
 import LearningPage from "./pages/LearningPage";
+import ProtectedPage from "./pages/ProtectedPage";
 import SidebarComponent from "./components/SidebarComponent";
 import './styles/App.css';
 
