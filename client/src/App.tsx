@@ -10,6 +10,7 @@ import CoursesPage from "./pages/CoursesPage";
 import LessonsPage from "./pages/LessonsPage";
 import LearningPage from "./pages/LearningPage";
 import ProtectedPage from "./pages/ProtectedPage";
+import AuthedPage from "./pages/AuthedPage";
 import SidebarComponent from "./components/SidebarComponent";
 import './styles/App.css';
 
