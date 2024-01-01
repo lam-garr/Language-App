@@ -6,12 +6,22 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import lombok.AllArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
+@AllArgsConstructor
 public class SecurityConfig {
+
+    private final JwtAuthFilter jwtAuthFilter;
+
     @Bean
     public SecurityFilterChain appsecurity(HttpSecurity http) throws Exception {
+
+        http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+
         http
             .cors().disable()
             .csrf().disable()
@@ -20,6 +30,7 @@ public class SecurityConfig {
             .securityMatcher("/**")
             .authorizeHttpRequests(registry -> registry
             .requestMatchers("/").permitAll()
+            .requestMatchers("/login").permitAll()
             .anyRequest().authenticated()
             );
 
