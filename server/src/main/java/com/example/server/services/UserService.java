@@ -1,24 +1,34 @@
 package com.example.server.services;
 
+import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.server.entity.UserEntity;
+import com.example.server.repository.UserRepository;
 
 @Service
 public class UserService {
-    private static final String EXIST_NAME = "User";
+
+    @Autowired
+    private UserRepository userRepository;
 
     public Optional<UserEntity> findByUsername(String username) {
-        if(!EXIST_NAME.equalsIgnoreCase(username)) return Optional.empty();
+
+        var foundUser = userRepository.findByUsername(username);
+
+        if(foundUser == null){
+            return Optional.empty();
+        }
 
         var user = new UserEntity();
 
-        user.setId("1");
-        user.setUsername(EXIST_NAME);
-        user.setPassword(new BCryptPasswordEncoder().encode("password"));
+        user.setId(foundUser.getId());
+        user.setUsername(foundUser.getUsername());
+        user.setPassword(new BCryptPasswordEncoder().encode(foundUser.getPassword()));
         return Optional.of(user);
     }
 }

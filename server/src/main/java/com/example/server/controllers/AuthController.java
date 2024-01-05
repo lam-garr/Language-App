@@ -45,4 +45,5 @@ public class AuthController {
     public String secure(@AuthenticationPrincipal UserPrincipal principal) {
         return "Logged in as: " + principal.getUserId();
     }
+    
 }
