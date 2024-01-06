@@ -33,7 +33,7 @@ public class UserService {
 
         user.setId(foundUser.getId());
         user.setUsername(foundUser.getUsername());
-        user.setPassword(new BCryptPasswordEncoder().encode(foundUser.getPassword()));
+        user.setPassword(foundUser.getPassword());
         return Optional.of(user);
     }
 
