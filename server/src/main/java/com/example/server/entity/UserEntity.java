@@ -28,6 +28,8 @@ public class UserEntity {
     @Column(name="password")
     @JsonIgnore
     private String password;
+    @Column(name="data")
+    private String data;
     @Column(name="created")
     private String created;
 }
