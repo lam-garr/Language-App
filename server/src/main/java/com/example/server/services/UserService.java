@@ -1,7 +1,12 @@
 package com.example.server.services;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -31,4 +36,21 @@ public class UserService {
         user.setPassword(new BCryptPasswordEncoder().encode(foundUser.getPassword()));
         return Optional.of(user);
     }
+
+    public void saveUser(String username, String password) {
+        String id = UUID.randomUUID().toString();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        String createdNow = dtf.format(now);
+
+        var saveUser = userRepository.save(new UserEntity(
+            id,
+            username, 
+            new BCryptPasswordEncoder().encode(password), 
+            "none", 
+            createdNow));
+
+        return;
+    }
+
 }

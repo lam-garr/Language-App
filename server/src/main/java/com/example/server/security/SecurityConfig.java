@@ -38,6 +38,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(registry -> registry
             .requestMatchers("/").permitAll()
             .requestMatchers("/login").permitAll()
+            .requestMatchers("/signup").permitAll()
             .anyRequest().authenticated()
             );
 
