@@ -53,4 +53,10 @@ public class UserService {
         return;
     }
 
+    public String getUserData(String id) {
+        UserEntity currentUser = userRepository.findUserById(id);
+
+        return currentUser.getData();
+    }
+
 }
