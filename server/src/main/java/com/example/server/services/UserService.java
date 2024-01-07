@@ -59,4 +59,8 @@ public class UserService {
         return currentUser.getData();
     }
 
+    public void editUserData(String updatedData, String id) {
+        userRepository.updateUserDataById(updatedData, id);
+        return;
+    }
 }

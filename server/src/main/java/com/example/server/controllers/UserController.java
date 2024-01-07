@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.server.entity.UserEntity;
+import com.example.server.models.EditUserDataReq;
 import com.example.server.models.SignupReq;
 import com.example.server.security.UserPrincipal;
 import com.example.server.services.UserService;
@@ -29,5 +30,12 @@ public class UserController {
     @GetMapping("/user-data")
     public String getUserData(@AuthenticationPrincipal UserPrincipal principal) {
         return userService.getUserData(principal.getUserId());
+    }
+
+    @PostMapping("/user-data-edit")
+    public void editUserData(@RequestBody EditUserDataReq req, 
+        @AuthenticationPrincipal UserPrincipal principal) {
+            userService.editUserData(req.getUpdatedData(), principal.getUserId());
+            return;
     }
 }
