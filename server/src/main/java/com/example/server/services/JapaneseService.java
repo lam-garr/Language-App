@@ -8,6 +8,12 @@ import com.example.server.repository.JapaneseRepository;
 
 @Service
 public class JapaneseService {
+
     @Autowired
     private JapaneseRepository japaneseRepository;
+    
+    public String getContentById(String id) {
+        JapaneseEntity jpnContent = japaneseRepository.findContentById(id);
+        return jpnContent.getContents();
+    }
 }
