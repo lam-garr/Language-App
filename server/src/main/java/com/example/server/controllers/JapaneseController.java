@@ -2,6 +2,7 @@ package com.example.server.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,5 +18,10 @@ public class JapaneseController {
     @GetMapping("/get-one-jpn")
     public String getContentById(@RequestBody GetLanguageReq req) {
         return japaneseService.getContentById(req.getId());
+    }
+
+    @PostMapping("get-next-jpn")
+    public String getNextById(@RequestBody GetLanguageReq req) {
+        return japaneseService.getNextById(req.getId());
     }
 }
