@@ -24,4 +24,9 @@ public class JapaneseController {
     public String getNextById(@RequestBody GetLanguageReq req) {
         return japaneseService.getNextById(req.getId());
     }
+
+    @PostMapping("get-prev-jpn")
+    public String getPrevById(@RequestBody GetLanguageReq req) {
+        return japaneseService.getPrevById(req.getId());
+    }
 }

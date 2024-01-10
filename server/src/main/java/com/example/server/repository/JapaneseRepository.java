@@ -11,4 +11,7 @@ public interface JapaneseRepository extends JpaRepository<JapaneseEntity, String
 
     @Query(value="SELECT a FROM JapaneseEntity a WHERE a.id > ?1 ORDER BY a.id limit 1")
     public JapaneseEntity findNextById(String id);
+
+    @Query(value="SELECT a FROM JapaneseEntity a WHERE a.id < ?1 ORDER BY a.id DESC limit 1")
+    public JapaneseEntity findPrevById(String id);
 }

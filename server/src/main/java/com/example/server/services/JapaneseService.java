@@ -24,4 +24,12 @@ public class JapaneseService {
 
         return jpnContent.getContents();
     }
+
+    public String getPrevById(String id) {
+        JapaneseEntity jpnContent = japaneseRepository.findPrevById(id);
+
+        if(jpnContent==null) return "n/a";
+
+        return jpnContent.getContents();
+    }
 }
