@@ -38,4 +38,9 @@ public class UserController {
             userService.editUserData(req.getUpdatedData(), principal.getUserId());
             return;
     }
+
+    @GetMapping("/get-user-courses")
+    public List<String> getUserCourses() {
+        return userService.getUserCourses();
+    }
 }

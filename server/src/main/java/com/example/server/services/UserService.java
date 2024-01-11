@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -62,5 +63,11 @@ public class UserService {
     public void editUserData(String updatedData, String id) {
         userRepository.updateUserDataById(updatedData, id);
         return;
+    }
+
+    public List<String> getUserCourses(){
+        List<String> courseList = new ArrayList<String>();
+        courseList.add("Japanese");
+        return courseList;
     }
 }
