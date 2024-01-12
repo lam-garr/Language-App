@@ -70,4 +70,9 @@ public class UserService {
         courseList.add("Japanese");
         return courseList;
     }
+
+    public boolean getAuthenticated(String id) {
+        if((userRepository.findUserById(id))==null) return false;
+        return true;
+    }
 }

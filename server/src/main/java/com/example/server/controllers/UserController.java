@@ -32,7 +32,7 @@ public class UserController {
         return userService.getUserData(principal.getUserId());
     }
 
-    @PostMapping("/user-data-edit")
+    @GetMapping("/user-data-edit")
     public void editUserData(@RequestBody EditUserDataReq req, 
         @AuthenticationPrincipal UserPrincipal principal) {
             userService.editUserData(req.getUpdatedData(), principal.getUserId());
@@ -42,5 +42,10 @@ public class UserController {
     @GetMapping("/get-user-courses")
     public List<String> getUserCourses() {
         return userService.getUserCourses();
+    }
+
+    @PostMapping("/user-auth")
+    public boolean getUserAuthenticated(@AuthenticationPrincipal UserPrincipal principal) {
+        return userService.getAuthenticated(principal.getUserId());
     }
 }
