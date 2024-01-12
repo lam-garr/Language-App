@@ -1,5 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/HomePage.css";
+import jpnImg from "../utils/imgs/jpn.jpg";
+import frnImg from "../utils/imgs/frn.jpg";
+import cnImg from "../utils/imgs/cn.jpg";
 
 function HomePage() {
     return(
@@ -15,10 +19,11 @@ function HomePage() {
                     </div>
                     <div className="home-secOne-imgs">
                         <div className="home-secOne-imgs-pOne">
-                            <div></div>
-                            <div></div>
+                            <div><img src={jpnImg} alt=""/></div>
+                            <div><img src={cnImg} alt=""/></div>
                         </div>
                         <div className="home-secOne-imgs-pTwo">
+                            <img src={frnImg} alt=""/>
                         </div>
                     </div>
                 </div>
@@ -55,7 +60,7 @@ function HomePage() {
                             <span>
                                 Get unlimited access to all of our lessons designed for all learners.
                             </span>
-                            <button className="home-secThree-btn">Explore Now</button>
+                            <Link to={"/login"}><button className="home-secThree-btn">Explore Now</button></Link>
                         </div>
                     </div>
                 </div>

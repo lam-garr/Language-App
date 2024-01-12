@@ -129,6 +129,12 @@
     background-color: none;
     width: 285px;
     height: 240px;
+    border: none;
+}
+
+.home-secOne-imgs-pOne div:first-of-type img {
+    max-width: 284px;
+    height: 239px;
     border: 2px solid black;
 }
 
@@ -136,6 +142,12 @@
     background-color: none;
     width: 285px;
     height: 215px;
+    border: none;
+}
+
+.home-secOne-imgs-pOne div:last-of-type img {
+    max-width: 284px;
+    height: 214px;
     border: 2px solid black;
 }
 
@@ -143,7 +155,12 @@
     background-color: none;
     width: 300px;
     height: 463px;
-    padding: 2px;
+    border: none;
+}
+
+.home-secOne-imgs-pTwo img {
+    max-width: 299px;
+    height: 462px;
     border: 2px solid black;
 }
 
