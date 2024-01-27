@@ -16,7 +16,7 @@
     margin-top: 10px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid rgb(215, 139, 218);
+    color: rgb(44, 1, 65);
     position: relative;
 }
 
@@ -26,6 +26,7 @@
     min-height: 400px;
     max-width: 1000px;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .lessons-sec-one-title{
@@ -45,4 +46,48 @@
 .lessons-sec-two-content{
     min-height: 300px;
     width: 800px;
+}
+
+@media(max-width: 805px) {
+    .lessons-section-one, .lessons-section-two{
+        width: 700px;
+    }
+
+    .lessons-sec-two-content {
+        width: 700px;
+    }
+}
+
+@media(max-width: 715px) {
+    .lessons-section-one, .lessons-section-two{
+        width: 600px;
+    }
+
+    .lessons-sec-two-content {
+        width: 600px;
+    }
+}
+
+@media(max-width: 615px) {
+    .lessons-section-one, .lessons-section-two{
+        width: 500px;
+    }
+
+    .lessons-sec-two-content {
+        width: 500px;
+    }
+}
+
+@media(max-width: 515px) {
+    .lessons-section-one, .lessons-section-two{
+        width: 400px;
+    }
+
+    .lessons-sec-one-title {
+        width: 350px;
+    }
+
+    .lessons-sec-two-content {
+        width: 400px;
+    }
 }
