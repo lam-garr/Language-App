@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/LearningPage.css";
 
 function LearningPage() {
@@ -8,6 +9,8 @@ function LearningPage() {
     const [ lessonTitle, setLessonTitle ] = useState("");
 
     const [ currentData, setCurrentData ] = useState("");
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -59,6 +62,36 @@ function LearningPage() {
         fetchData();
     })
 
+    const previousclick = async () => {
+
+        if(Number(currentData) === 0) return;
+
+        const prevData = Number(currentData) - 1;
+
+        const token = window.localStorage.getItem("AccessToken");
+
+        let dataToken;
+
+        if(token) {
+            dataToken = JSON.parse(token);
+        }
+
+        const response = await fetch("http://localhost:5000/api/update-user-data", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${dataToken}`
+            },
+            body: JSON.stringify({userData: prevData})
+        });
+
+        const resObj = await response.json();
+
+        if(resObj) {
+            navigate("/learn");
+        }
+    }
+
     return(
         <main className="learning-main">
             <div className="learning-content">
@@ -77,8 +110,8 @@ function LearningPage() {
                 </section>
                 <section className="learning-sec-three">
                     <div className="learning-sec-three-content">
-                        <button className="learning-sThree-left-btn">left</button>
-                        <button className="learning-sThree-right-btn">right</button>
+                        <button className="learning-sThree-left-btn" onClick={previousclick}>prev</button>
+                        <button className="learning-sThree-right-btn">next</button>
                     </div>
                 </section>
             </div>
