@@ -133,9 +133,9 @@ function SignupPage() {
             return;
         }
 
-        /* setFetching(true);
+        setFetching(true);
 
-        const signupData = await fetch("/api/signup", {
+        const signupData = await fetch("http://localhost:5000/api/signup", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -152,7 +152,7 @@ function SignupPage() {
             setSignupErr(false);
             setFetching(false);
             navigate("/login");
-        } */
+        }
     }
 
     return(

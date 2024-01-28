@@ -56,16 +56,8 @@ function LoginPage() {
 
         setFetching(true);
 
-        const handleLoading = () => {
-            if(fetching) {
-                return "Loading";
-            } else {
-                return "Log In";
-            }
-        }
-
         //call login api
-        /* const loginData = await fetch("/api/login", {
+        const loginData = await fetch("http://localhost:5000/api/login", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({username: loginInput, password: passwordInput})
@@ -73,17 +65,31 @@ function LoginPage() {
 
         const apiDataObj = await loginData.json();
 
-        if(!apiDataObj.response) {
+        console.log(loginInput)
+        console.log(passwordInput)
+
+        console.log(apiDataObj);
+
+        if(!apiDataObj) {
             setLoginInput("");
             setPasswordInput("");
             setApiErr(true);
+            setFetching(false);
         }else {
             setApiErr(false);
             //set return token from api to localStorage
             window.localStorage.setItem("AccessToken", JSON.stringify(apiDataObj.accessToken));
             setFetching(false);
-            navigate("/{username}");
-        } */
+            navigate(`/${loginInput}`);
+        }
+    }
+
+    const handleLoading = () => {
+        if(fetching) {
+            return "Loading";
+        } else {
+            return "Log In";
+        }
     }
 
     return(
@@ -97,7 +103,7 @@ function LoginPage() {
                      placeholder="Password" errorMessage={passwordErrMessage} requried={true}/>
                     <div className="log-in-submit">
                         {apiErr && <span className="log-in-err">Error logging in, please try again.</span>}
-                        <button className="log-in-submitBtn" type="submit" disabled={fetching}>Login</button>
+                        <button className="log-in-submitBtn" type="submit" disabled={fetching}>{handleLoading()}</button>
                     </div>
                 </form>
                 <div className="log-in-members">
