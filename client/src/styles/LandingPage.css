@@ -5,7 +5,7 @@
 .landing-content {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: rgb(245, 239, 248);
 }
 
 .landing-header {
@@ -20,6 +20,7 @@
 
 .landing-header-container {
     color: rgb(99, 7, 99);
+    background-color: rgb(241, 233, 245);
 }
 
 .landing-section-one {
@@ -44,6 +45,7 @@
 
 .landing-section-one-title h2 {
     font-size: 20px;
+    color: rgb(99, 7, 99);
 }
 
 .landing-section-one-parent-container {
@@ -58,8 +60,8 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    background-color: rgb(210, 182, 223);
-    color: white;
+    background-color: white;
+    color: rgb(67, 14, 92);
     border: 1px solid rgb(67, 14, 92);
     border-radius: 15px;
     height: 190px;
@@ -87,7 +89,7 @@
     width: 100px;
     height: 30px;
     cursor: pointer;
-    background-color: pink;
+    background-color: rgb(154, 69, 204);
     color: white;
 }
 
@@ -95,8 +97,8 @@
     display: flex;
     flex-direction: column;
     width: 400px;
-    background-color: rgb(210, 182, 223);
-    color: white;
+    background-color: white;
+    color: rgb(67, 14, 92);
     border: 1px solid rgb(67, 14, 92);
     border-radius: 15px;
     height: 190px;
@@ -119,7 +121,7 @@
     width: 90px;
     height: 30px;
     cursor: pointer;
-    background-color: pink;
+    background-color: rgb(154, 69, 204);
     color: white;
 }
 
@@ -142,7 +144,7 @@
     align-items: center;
     height: 190px;
     width: 700px;
-    background-color: rgb(250, 223, 227);
+    background-color: rgb(210, 182, 223);
     border-radius: 15px;
     padding: 5px;
     color: white;
@@ -175,7 +177,7 @@
 .landing-section-three-title {
     display: flex;
     flex-direction: row;
-    color: rgb(110, 8, 110);
+    color: rgb(67, 14, 92);
     justify-content: space-between;
     width: 1300px;
     height: 50px;
@@ -194,10 +196,14 @@
     flex-direction: column;
     height: 400px;
     width: 700px;
-    background-color: rgb(210, 182, 223);
+    background-color: white;
     border: 1px solid rgb(67, 14, 92);
     border-radius: 15px;
     padding: 5px;
+}
+
+.landing-sec-three-cOne-title h2, .landing-sec-three-cTwo-title h2 {
+    color: rgb(99, 7, 99);
 }
 
 .landing-sec-three-cOne-content {
