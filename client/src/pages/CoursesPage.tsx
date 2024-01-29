@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import CoursesTableComponent from "../components/CoursesTableComponent";
 import "../styles/CoursesPage.css";
@@ -6,6 +6,10 @@ import "../styles/CoursesPage.css";
 function CoursesPage() {
 
     const [ coursesData, setCoursesData ] = useState<any[]>([]);
+
+    useEffect(() => {
+        setCoursesData(["japanese"]);
+    })
 
     return(
         <main className="courses-main-content">
@@ -15,7 +19,7 @@ function CoursesPage() {
                 </div>
             </section>
             <section className="courses-section-two">
-                {coursesData ?
+                {coursesData.length ?
                 (<div className="courses-sec-two-course-options">
                     <CoursesTableComponent courseData={coursesData}/>
                 </div>):

@@ -14,8 +14,8 @@ function CoursesTableComponent(prop: coursesTblComponentInterface) {
                 {prop.courseData.map(lesson => {
                     return(
                         <tr>
-                            <td>{lesson.title}</td>
-                            <td><Link to={`/`}><button className="course-tbl-view-btn">Start Lesson</button></Link></td>
+                            <td>{lesson}</td>
+                            <td><Link to={`/learn`}><button className="course-tbl-view-btn">Start Lesson</button></Link></td>
                         </tr>
                     );
                 })}
