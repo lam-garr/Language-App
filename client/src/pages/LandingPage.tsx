@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import landingPageInterface from "../utils/interfaces/landingPageInterface";
 import "../styles/LandingPage.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function LandingPage() {
 
+    const [ user, setUser ] = useState("");
+
     const navigate = useNavigate();
+
+    const params = useParams();
 
     const navigateToLessons = () => {
         navigate("/lessons");
@@ -15,11 +19,15 @@ function LandingPage() {
         navigate("/learn");
     }
 
+    useEffect(() => {
+        setUser(params.username);
+    }, [])
+
     return(
         <main className="landing-content">
             <header className="landing-header">
                 <div className="landing-header-container">
-                    <h1>Hi, your name</h1>
+                    <h1>Hi, {user}</h1>
                 </div>
             </header>
             <section className="landing-section-one">
