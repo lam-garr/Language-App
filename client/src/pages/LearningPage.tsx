@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import "../styles/LearningPage.css";
 
 function LearningPage() {
@@ -9,8 +8,6 @@ function LearningPage() {
     const [ lessonTitle, setLessonTitle ] = useState("");
 
     const [ currentData, setCurrentData ] = useState("");
-
-    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,6 +59,23 @@ function LearningPage() {
         fetchData();
     })
 
+    const newLesson = async () => {
+        const response = await fetch("http://localhost:5000/api/get-lessons", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({lessonName: "japanese", lessonId: currentData})
+            });
+
+            const resObj = await response.json();
+
+            const lesson = resObj.languageLesson;
+
+            if(lesson) {
+                setLessonTitle(lesson.lessonTitle);
+                setLessonData(lesson.lessonContent);
+            }
+    }
+
     const previousclick = async () => {
 
         if(Number(currentData) === 0) return;
@@ -77,18 +91,18 @@ function LearningPage() {
         }
 
         const response = await fetch("http://localhost:5000/api/update-user-data", {
-            method: "GET",
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${dataToken}`
             },
-            body: JSON.stringify({userData: prevData})
+            body: JSON.stringify({userData: prevData.toString()})
         });
 
         const resObj = await response.json();
 
         if(resObj) {
-            navigate("/learn");
+            newLesson();
         }
     }
 
