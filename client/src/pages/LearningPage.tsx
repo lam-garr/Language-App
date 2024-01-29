@@ -9,6 +9,8 @@ function LearningPage() {
 
     const [ currentData, setCurrentData ] = useState("");
 
+    const [ maxLessons, setMaxLessons ] = useState(false);
+
     useEffect(() => {
         const fetchData = async () => {
             const token = window.localStorage.getItem("AccessToken");
@@ -73,14 +75,49 @@ function LearningPage() {
             if(lesson) {
                 setLessonTitle(lesson.lessonTitle);
                 setLessonData(lesson.lessonContent);
+                setMaxLessons(false);
+            } else {
+                setLessonTitle("End of Lessons");
+                setLessonData(["Come back later for more lessons!"]);
+                setMaxLessons(true);
             }
     }
 
-    const previousclick = async () => {
+    const previousClick = async () => {
 
         if(Number(currentData) === 0) return;
 
         const prevData = Number(currentData) - 1;
+
+        const token = window.localStorage.getItem("AccessToken");
+
+        let dataToken;
+
+        if(token) {
+            dataToken = JSON.parse(token);
+        }
+
+        const response = await fetch("http://localhost:5000/api/update-user-data", {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${dataToken}`
+            },
+            body: JSON.stringify({userData: prevData.toString()})
+        });
+
+        const resObj = await response.json();
+
+        if(resObj) {
+            newLesson();
+        }
+    }
+
+    const nextClick = async () => {
+
+        if(maxLessons) return;
+
+        const prevData = Number(currentData) + 1;
 
         const token = window.localStorage.getItem("AccessToken");
 
@@ -124,8 +161,8 @@ function LearningPage() {
                 </section>
                 <section className="learning-sec-three">
                     <div className="learning-sec-three-content">
-                        <button className="learning-sThree-left-btn" onClick={previousclick}>prev</button>
-                        <button className="learning-sThree-right-btn">next</button>
+                        <button className="learning-sThree-left-btn" onClick={previousClick}>prev</button>
+                        <button className="learning-sThree-right-btn" onClick={nextClick} disabled={maxLessons}>next</button>
                     </div>
                 </section>
             </div>
