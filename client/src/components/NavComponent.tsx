@@ -9,7 +9,7 @@ function NavComponent(prop: navComponentPropInterface) {
             <div className="nav-container">
                 <div className="nav-left">
                     <div className="nav-left-logo">
-                        <h1>Logo</h1>
+                        <h1>LingoLearn</h1>
                     </div>
                     <div className="nav-left-content">
                         <Link to={"/"}><button><h2>home</h2></button></Link>
