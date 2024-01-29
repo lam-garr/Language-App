@@ -1,8 +1,20 @@
 import React from "react";
 import landingPageInterface from "../utils/interfaces/landingPageInterface";
 import "../styles/LandingPage.css";
+import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
+
+    const navigate = useNavigate();
+
+    const navigateToLessons = () => {
+        navigate("/lessons");
+    }
+
+    const navigateToLearning = () => {
+        navigate("/learn");
+    }
+
     return(
         <main className="landing-content">
             <header className="landing-header">
@@ -23,7 +35,7 @@ function LandingPage() {
                         </div>
                         <div className="landing-sec-one-cOne-button">
                             <div></div>
-                            <button>Review</button>
+                            <button onClick={navigateToLessons}>Review</button>
                         </div>
                     </div>
                     <div className="landing-sec-one-container-two">
@@ -32,7 +44,7 @@ function LandingPage() {
                         </div>
                         <div className="landing-sec-one-cTwo-button">
                             <div></div>
-                            <button>Continue</button>
+                            <button onClick={navigateToLearning}>Continue</button>
                         </div>
                     </div>
                 </div>
