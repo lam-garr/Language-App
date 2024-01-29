@@ -17,7 +17,7 @@ function ProtectedPage() {
                 dataToken = JSON.parse(data);
             }
 
-            const response = await fetch("/api/", {
+            const response = await fetch("/api/validate", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -27,7 +27,7 @@ function ProtectedPage() {
 
             const resObj = await response.json();
 
-            if(resObj) {
+            if(resObj && resObj.message === "Success") {
                 setValidated(true);
                 setFetching(false);
             } else {
@@ -40,7 +40,7 @@ function ProtectedPage() {
 
     if(fetching) return null;
 
-    return validated ? <Outlet/> : <Navigate to="login"/>;
+    return validated ? <Outlet/> : <Navigate to="/login"/>;
 }
 
 export default ProtectedPage;

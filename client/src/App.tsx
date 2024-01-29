@@ -11,6 +11,7 @@ import LessonsPage from "./pages/LessonsPage";
 import LearningPage from "./pages/LearningPage";
 import ProtectedPage from "./pages/ProtectedPage";
 import AuthedPage from "./pages/AuthedPage";
+import Protected from "./pages/Protected";
 import SidebarComponent from "./components/SidebarComponent";
 import './styles/App.css';
 
@@ -37,10 +38,12 @@ function App() {
       <SidebarComponent clickHandler={handleSidebarChange} closeHandler={handleSidebarChange} sidebarIsOpen={sidebarIsOpen}/>
       <OverlayComponent isOpen={overlayIsOpen}/>
       <Routes>
-        <Route path="/:username" element={<LandingPage/>}></Route>
-        <Route path="/courses" element={<CoursesPage/>}></Route>
-        <Route path="/lessons" element={<LessonsPage/>}></Route>
-        <Route path="/learn" element={<LearningPage/>}></Route>
+        <Route element={<Protected/>}>
+          <Route path="/:username" element={<LandingPage/>}></Route>
+          <Route path="/courses" element={<CoursesPage/>}></Route>
+          <Route path="/lessons" element={<LessonsPage/>}></Route>
+          <Route path="/learn" element={<LearningPage/>}></Route>
+        </Route>
         <Route path="/signup" element={<SignupPage/>}></Route>
         <Route path="/login" element={<LoginPage/>}></Route>
         <Route path="/" element={<HomePage/>}></Route>

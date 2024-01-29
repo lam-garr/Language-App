@@ -18,7 +18,7 @@ function AuthedPage() {
             }
 
             //wip
-            const response = await fetch("/api/", {
+            const response = await fetch("/api/validate", {
                 method:"GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -28,7 +28,7 @@ function AuthedPage() {
 
             const resObj = await response.json();
 
-            if(resObj) {
+            if(resObj && resObj.message === "Success") {
                 setValidated(true);
                 setFetching(false);
             } else {
@@ -43,7 +43,7 @@ function AuthedPage() {
         return null;
     }
 
-    return validated ? <Navigate to="/:username"/> : <Outlet/>;
+    return validated ? <Navigate to="/user"/> : <Outlet/>;
 }
 
 export default AuthedPage;
