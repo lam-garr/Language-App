@@ -20,11 +20,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 500px;
+    width: 600px;
 }
 
 .nav-left-logo {
-    width: 100px;
+    width: 225px;
     padding: 5px;
 }
 
