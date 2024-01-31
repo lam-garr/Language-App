@@ -9,8 +9,6 @@ function LearningPage() {
 
     const [ currentData, setCurrentData ] = useState("");
 
-    const [ maxLessons, setMaxLessons ] = useState(false);
-
     useEffect(() => {
         const fetchData = async () => {
             const token = window.localStorage.getItem("AccessToken");
@@ -75,11 +73,6 @@ function LearningPage() {
             if(lesson) {
                 setLessonTitle(lesson.lessonTitle);
                 setLessonData(lesson.lessonContent);
-                setMaxLessons(false);
-            } else {
-                setLessonTitle("End of Lessons");
-                setLessonData(["Come back later for more lessons!"]);
-                setMaxLessons(true);
             }
     }
 
@@ -114,8 +107,6 @@ function LearningPage() {
     }
 
     const nextClick = async () => {
-
-        if(maxLessons) return;
 
         const prevData = Number(currentData) + 1;
 
@@ -162,7 +153,7 @@ function LearningPage() {
                 <section className="learning-sec-three">
                     <div className="learning-sec-three-content">
                         <button className="learning-sThree-left-btn" onClick={previousClick}>prev</button>
-                        <button className="learning-sThree-right-btn" onClick={nextClick} disabled={maxLessons}>next</button>
+                        <button className="learning-sThree-right-btn" onClick={nextClick}>next</button>
                     </div>
                 </section>
             </div>
