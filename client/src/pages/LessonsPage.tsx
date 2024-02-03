@@ -17,7 +17,7 @@ function LessonsPage() {
                 dataToken = JSON.parse(data);
             }
 
-            const response = await fetch("/api", {
+            const response = await fetch("/api/user-lessons", {
                 method:"GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -27,12 +27,14 @@ function LessonsPage() {
 
             const resObj = await response.json();
 
-            if(resObj) {
-                setLessonData(resObj);
+            const userLessons = resObj.lessons;
+
+            if(userLessons) {
+                setLessonData(userLessons.lessons);
             }
         }
 
-        //fetchData();
+        fetchData();
     }, [])
 
     return(
