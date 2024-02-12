@@ -8,7 +8,7 @@ function AuthedPage() {
     const [ fetching, setFetching ] = useState(true);
 
     useEffect(() => {
-        const validate = async () => {
+        /* const validate = async () => {
             const data = window.localStorage.getItem("AccessToken");
 
             let dataToken;
@@ -17,7 +17,6 @@ function AuthedPage() {
                 dataToken = JSON.parse(data);
             }
 
-            //wip
             const response = await fetch("/api/validate", {
                 method:"GET",
                 headers: {
@@ -36,7 +35,15 @@ function AuthedPage() {
             }
         }
 
-        validate();
+        validate(); */
+
+        if(window.localStorage.getItem("AccessToken")) {
+            setValidated(true);
+            setFetching(false);
+        } else {
+            setFetching(false);
+        }
+        
     }, [])
 
     if(fetching) {
