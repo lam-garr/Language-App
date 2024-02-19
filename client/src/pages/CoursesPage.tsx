@@ -8,7 +8,7 @@ function CoursesPage() {
     const [ coursesData, setCoursesData ] = useState<any[]>([]);
 
     useEffect(() => {
-        setCoursesData(["japanese"]);
+        setCoursesData(["Chinese","French","Japanese","Korean","Spanish"]);
     })
 
     return(

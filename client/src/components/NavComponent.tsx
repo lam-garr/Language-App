@@ -13,7 +13,7 @@ function NavComponent(prop: navComponentPropInterface) {
                     </div>
                     <div className="nav-left-content">
                         <Link to={"/"}><button><h2>home</h2></button></Link>
-                        <Link to={"/lessons"}><button><h2>my level</h2></button></Link>
+                        <Link to={"/lessons"}><button><h2>my lessons</h2></button></Link>
                         <Link to={"/courses"}><button><h2>my courses</h2></button></Link>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ function NavComponent(prop: navComponentPropInterface) {
                 </div>
                 <div className="nav-mobile-middle">
                     <div>
-                        <Link to={"/"}><button><h1>Logo</h1></button></Link>
+                        <Link to={"/"}><button><h1>LingoLearn</h1></button></Link>
                     </div>
                 </div>
                 <div className="nav-mobile-right">
