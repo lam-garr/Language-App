@@ -14,9 +14,9 @@ Work through and learn lessons at your own pace.
 
 `$ cd Language-App` will navigate into the repository.
 
-`cd client` will navigate you to the client directory, further instructions can be found there including how to start the app.
+`$ cd client` will navigate you to the client directory, further instructions can be found there including how to start the app.
 
-`cd server` will navigate you to the server directory.
+`$ cd server` will navigate you to the server directory.
 
 Within this directory you can access the full source code to extract to your local machine.
 
