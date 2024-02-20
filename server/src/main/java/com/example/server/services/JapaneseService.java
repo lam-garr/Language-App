@@ -1,5 +1,8 @@
 package com.example.server.services;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +34,9 @@ public class JapaneseService {
         if(jpnContent==null) return "n/a";
 
         return jpnContent.getContents();
+    }
+
+    public Optional<List<JapaneseEntity>> getAllPrevById(String id) {
+        return Optional.of(japaneseRepository.findAllPrevById(id));
     }
 }
