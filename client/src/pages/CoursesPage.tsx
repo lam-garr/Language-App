@@ -6,9 +6,27 @@ import "../styles/CoursesPage.css";
 function CoursesPage() {
 
     const [ coursesData, setCoursesData ] = useState<any[]>([]);
-
+    
     useEffect(() => {
-        setCoursesData(["Chinese","French","Japanese","Korean","Spanish"]);
+        const fetchData = async () => {
+
+            const response = await fetch("http://localhost:5000/api/get-courses", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            const resObj = await response.json();
+
+            const courses = resObj.courses;
+            //expected value: ["Chinese","French","Japanese","Korean","Spanish"]
+            if(courses) {
+                setCoursesData(courses);
+            }
+        }
+
+        fetchData();
     })
 
     return(
