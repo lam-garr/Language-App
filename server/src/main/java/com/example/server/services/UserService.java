@@ -67,7 +67,11 @@ public class UserService {
 
     public List<String> getUserCourses(){
         List<String> courseList = new ArrayList<String>();
+        courseList.add("Chinese");
+        courseList.add("French");
+        courseList.add("Korean");
         courseList.add("Japanese");
+        courseList.add("Spanish");
         return courseList;
     }
 
