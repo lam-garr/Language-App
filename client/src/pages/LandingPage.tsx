@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import landingPageInterface from "../utils/interfaces/landingPageInterface";
 import "../styles/LandingPage.css";
 import { useNavigate } from "react-router-dom";
@@ -19,11 +19,41 @@ function LandingPage() {
         navigate("/courses");
     }
 
+    const [ username,setUsername ] = useState("");
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const token = window.localStorage.getItem("AccessToken");
+
+            let dataToken;
+
+            if(token) {
+                dataToken = JSON.parse(token);
+            }
+
+            const response = await fetch("http://localhost:5000/api/user-account-data", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${dataToken}`
+                }
+            });
+
+            const resObj = await response.json();
+
+            if(resObj) {
+                setUsername(resObj.username);
+            }
+        }
+
+        fetchData();
+    })
+
     return(
         <main className="landing-content">
             <header className="landing-header">
                 <div className="landing-header-container">
-                    <h1>Hi, your name</h1>
+                    <h1>Hi, {username}</h1>
                 </div>
             </header>
             <section className="landing-section-one">
