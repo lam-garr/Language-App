@@ -48,4 +48,9 @@ public class UserController {
     public boolean getUserAuthenticated(@AuthenticationPrincipal UserPrincipal principal) {
         return userService.getAuthenticated(principal.getUserId());
     }
+
+    @GetMapping("/user-account-data")
+    public String getUsername(@AuthenticationPrincipal UserPrincipal principal) {
+        return userService.getUsername(principal.getUserId());
+    }
 }
