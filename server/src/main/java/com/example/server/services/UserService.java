@@ -79,4 +79,10 @@ public class UserService {
         if((userRepository.findUserById(id))==null) return false;
         return true;
     }
+
+    public String getUsername(String id) {
+        UserEntity currentUser = userRepository.findUserById(id);
+
+        return currentUser.getUsername();
+    }
 }
