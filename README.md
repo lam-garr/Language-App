@@ -6,20 +6,3 @@ This is a full stack web application that assists users with learning a new lang
 
 Work through and learn lessons at your own pace.
 ![Peek 2024-02-18 21-34](https://github.com/lam-garr/Language-App/assets/113269218/c6587a0b-c6f5-4030-806d-2ecbebfd774c)
-
-
-## Get Started
-
-`$ git clone git@github.com:lam-garr/Language-App.git` will clone this repository.
-
-`$ cd Language-App` will navigate into the repository.
-
-`$ cd client` will navigate you to the client directory, further instructions can be found there including how to start the app.
-
-`$ cd server` will navigate you to the server directory.
-
-Within this directory you can access the full source code to extract to your local machine.
-
-Locate the `ServerApplication.java` file and then proceed to run the applicaiton to start the Tomcat server. 
-
-*Do note to properly configure the `application.properties` file with your personal configurations before running the app.
